@@ -1,5 +1,5 @@
 {
-    "description": "A Child element with an additional normalized distance field.",
+    "description": "A Child element with an additional normalized similarity field.",
     "allOf": [
         {
             "$ref": "./Child.json"
@@ -7,15 +7,15 @@
         {
             "type": "object",
             "properties": {
-                "distance": {
+                "similarity": {
                     "type": "number",
-                    "description": "The normalized cosine similarity distance (0.0 = identical, 1.0 = most dissimilar). For getSonicSimilarTracks, relative to the query song. For findSonicPath, relative to the starting song. Returns -1 when distance is not supported by the server.",
+                    "description": "The normalized similarity score (1.0 = most similar, 0.0 = least similar). For getSonicSimilarTracks, relative to the query song. For findSonicPath, relative to the starting song. Returns -1 when similarity is not supported by the server.",
                     "minimum": -1,
                     "maximum": 1
                 }
             },
             "required": [
-                "distance"
+                "similarity"
             ]
         }
     ]

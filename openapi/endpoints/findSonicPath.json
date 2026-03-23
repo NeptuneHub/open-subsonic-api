@@ -1,7 +1,7 @@
 {
     "get": {
         "summary": "Finds a sonic path between two songs based on audio similarity.",
-        "description": "Finds a path of songs connecting a start song to an end song, navigating through audio similarity space. Each song in the path includes its normalized distance from the start song.",
+        "description": "Finds a path of songs connecting a start song to an end song, navigating through audio similarity space. Each song in the path includes its normalized similarity score from the start song.",
         "operationId": "findSonicPath",
         "tags": [
             "Browsing",
@@ -57,7 +57,7 @@
     },
     "post": {
         "summary": "Finds a sonic path between two songs based on audio similarity.",
-        "description": "Finds a path of songs connecting a start song to an end song, navigating through audio similarity space. Each song in the path includes its normalized distance from the start song.\n\nRequires OpenSubsonic extension name `formPost` (As returned by `getOpenSubsonicExtensions`)",
+        "description": "Finds a path of songs connecting a start song to an end song, navigating through audio similarity space. Each song in the path includes its normalized similarity score from the start song.\n\nRequires OpenSubsonic extension name `formPost` (As returned by `getOpenSubsonicExtensions`)",
         "operationId": "postFindSonicPath",
         "tags": [
             "Browsing"

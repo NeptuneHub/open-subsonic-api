@@ -4,10 +4,10 @@ linkTitle: "sonicMatch [OS]"
 OpenSubsonic:
 - Addition
 description: >
-  A Child element with an additional normalized distance field.
+  A Child element with an additional normalized similarity field.
 ---
 
-A `sonicMatch` is a [`Child`](../child) element extended with a `distance` field.
+A `sonicMatch` is a [`Child`](../child) element extended with a `similarity` field.
 
 {{< tabpane persist=false >}}
 {{< tab header="**Example**:" disabled=true />}}
@@ -37,7 +37,7 @@ A `sonicMatch` is a [`Child`](../child) element extended with a `distance` field
   "suffix": "wma",
   "contentType": "audio/x-ms-wma",
   "path": "Synthetic/Synthetic_-_Colorsmoke_EP/04-Synthetic_-_BrownSmoke.wma",
-  "distance": 0.05
+  "similarity": 1.0
 }
 {{< /tab >}}
 {{< tab header="Subsonic" lang="json" >}}
@@ -48,4 +48,4 @@ Does not exist.
 | Field |  Type | Req. | OpenS. | Details |
 | --- | --- | --- | --- | --- |
 | All [`Child`](../child) fields | | | | All fields from the [`Child`](../child) type. |
-| `distance` | `number` | **Yes** |  | The normalized cosine similarity distance (0.0 = identical, 1.0 = most dissimilar). For `getSonicSimilarTracks`, relative to the query song. For `findSonicPath`, relative to the starting song. Returns -1 when distance is not supported by the server. |
+| `similarity` | `number` | **Yes** |  | The normalized similarity score (1.0 = most similar, 0.0 = least similar). For `getSonicSimilarTracks`, relative to the query song. For `findSonicPath`, relative to the starting song. Returns -1 when similarity is not supported by the server. |

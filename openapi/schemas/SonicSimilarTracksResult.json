@@ -4,7 +4,7 @@
     "properties": {
         "sonicMatch": {
             "type": "array",
-            "description": "A list of similar songs ordered by distance, each with its normalized distance from the query song.",
+            "description": "A list of similar songs ordered by similarity, each with its normalized similarity score from the query song.",
             "items": {
                 "$ref": "./SonicMatch.json"
             }

@@ -4,7 +4,7 @@
     "properties": {
         "sonicMatch": {
             "type": "array",
-            "description": "An ordered list of songs forming the path from the start song to the end song, each with its distance from the starting song.",
+            "description": "An ordered list of songs forming the path from the start song to the end song, each with its similarity score from the starting song.",
             "items": {
                 "$ref": "./SonicMatch.json"
             }

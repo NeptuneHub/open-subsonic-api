@@ -37,7 +37,7 @@ description: >
       "suffix": "wma",
       "contentType": "audio/x-ms-wma",
       "path": "Synthetic/Synthetic_-_Colorsmoke_EP/04-Synthetic_-_BrownSmoke.wma",
-      "distance": 0.05
+      "similarity": 1.0
     },
     {
       "id": "300000055",
@@ -64,7 +64,7 @@ description: >
       "suffix": "mp3",
       "contentType": "audio/mpeg",
       "path": "Synthetic/Synthetic_-_Colorsmoke_EP/05-Synthetic_-_RedGreenSmoke.mp3",
-      "distance": 0.12
+      "similarity": 0.88
     }
   ]
 }
@@ -76,4 +76,4 @@ Does not exist.
 
 | Field |  Type | Req. | OpenS. | Details |
 | --- | --- | --- | --- | --- |
-| `sonicMatch` | Array of [`sonicMatch`](../sonicmatch) | No |  | A list of similar songs ordered by distance. |
+| `sonicMatch` | Array of [`sonicMatch`](../sonicmatch) | No |  | A list of similar songs ordered by similarity. |
