@@ -6,12 +6,16 @@
         {
             "type": "object",
             "properties": {
-                "sonicSimilarTracksResult": {
-                    "$ref": "../../schemas/SonicSimilarTracksResult.json"
+                "sonicMatch": {
+                    "type": "array",
+                    "description": "A list of similar tracks with similarity values.",
+                    "items": {
+                        "$ref": "../../schemas/SonicMatch.json"
+                    }
                 }
             },
             "required": [
-                "sonicSimilarTracksResult"
+                "sonicMatch"
             ]
         }
     ]

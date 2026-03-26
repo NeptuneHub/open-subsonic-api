@@ -27,7 +27,7 @@ Finds a path of songs connecting a start song to an end song, navigating through
 
 ### Result
 
-A [`subsonic-response`](../../responses/subsonic-response) element with a nested [`findSonicPathResult`](../../responses/findsonicpathresult) element on success.
+A [`subsonic-response`](../../responses/subsonic-response) element with a top-level `sonicMatch` array on success.
 
 {{< tabpane persist=false >}}
 {{< tab header="**Example**:" disabled=true />}}
@@ -39,8 +39,7 @@ A [`subsonic-response`](../../responses/subsonic-response) element with a nested
     "type": "AwesomeServerName",
     "serverVersion": "0.1.3 (tag)",
     "openSubsonic": true,
-    "findSonicPathResult": {
-      "sonicMatch": [
+    "sonicMatch": [
         {
           "id": "300000060",
           "parent": "200000002",
@@ -107,4 +106,4 @@ Does not exist.
 
 | Field |  Type | Req. | OpenS. | Details |
 | --- | --- | --- | --- | --- |
-| `findSonicPathResult` | [`findSonicPathResult`](../../responses/findsonicpathresult) | **Yes** |  | The sonic path result |
+| `sonicMatch` | Array of [`sonicMatch`](../../responses/sonicmatch) | **Yes** |  | The ordered sonic path results with per-track similarity |

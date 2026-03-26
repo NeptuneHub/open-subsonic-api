@@ -26,7 +26,7 @@ Returns tracks that are sonically similar to a given track, based on audio analy
 
 ### Result
 
-A [`subsonic-response`](../../responses/subsonic-response) element with a nested [`sonicSimilarTracksResult`](../../responses/sonicsimilartracksresult) element on success.
+A [`subsonic-response`](../../responses/subsonic-response) element with a top-level `sonicMatch` array on success.
 
 {{< tabpane persist=false >}}
 {{< tab header="**Example**:" disabled=true />}}
@@ -38,8 +38,7 @@ A [`subsonic-response`](../../responses/subsonic-response) element with a nested
     "type": "AwesomeServerName",
     "serverVersion": "0.1.3 (tag)",
     "openSubsonic": true,
-    "sonicSimilarTracksResult": {
-      "sonicMatch": [
+    "sonicMatch": [
         {
           "id": "300000060",
           "parent": "200000002",
@@ -106,4 +105,4 @@ Does not exist.
 
 | Field |  Type | Req. | OpenS. | Details |
 | --- | --- | --- | --- | --- |
-| `sonicSimilarTracksResult` | [`sonicSimilarTracksResult`](../../responses/sonicsimilartracksresult) | **Yes** |  | The sonic similar tracks result |
+| `sonicMatch` | Array of [`sonicMatch`](../../responses/sonicmatch) | **Yes** |  | The similar tracks with per-track similarity |

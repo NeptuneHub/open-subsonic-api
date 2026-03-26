@@ -1,6 +1,6 @@
 {
     "type": "object",
-    "description": "A subsonic-response element with a nested `sonicSimilarTracksResult` element on success.",
+    "description": "A subsonic-response element with a direct `sonicMatch` array on success.",
     "properties": {
         "subsonic-response": {
             "oneOf": [

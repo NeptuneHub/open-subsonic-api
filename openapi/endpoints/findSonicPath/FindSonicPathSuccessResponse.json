@@ -6,12 +6,16 @@
         {
             "type": "object",
             "properties": {
-                "findSonicPathResult": {
-                    "$ref": "../../schemas/FindSonicPathResult.json"
+                "sonicMatch": {
+                    "type": "array",
+                    "description": "An ordered list of songs with similarity values.",
+                    "items": {
+                        "$ref": "../../schemas/SonicMatch.json"
+                    }
                 }
             },
             "required": [
-                "findSonicPathResult"
+                "sonicMatch"
             ]
         }
     ]
