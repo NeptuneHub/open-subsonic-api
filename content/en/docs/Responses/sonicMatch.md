@@ -8,6 +8,7 @@ description: >
 ---
 
 A `sonicMatch` is a wrapper object with:
+
 - `entry` as a [`Child`](../child) object
 - `similarity` (normalized similarity value)
 
