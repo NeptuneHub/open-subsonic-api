@@ -66,7 +66,7 @@ A [`subsonic-response`](../../responses/subsonic-response) element with a nested
           "suffix": "wma",
           "contentType": "audio/x-ms-wma",
           "path": "Synthetic/Synthetic_-_Colorsmoke_EP/04-Synthetic_-_BrownSmoke.wma",
-          "distance": 0.0
+          "similarity": 0.0
         },
         {
           "id": "300000055",
@@ -93,7 +93,7 @@ A [`subsonic-response`](../../responses/subsonic-response) element with a nested
           "suffix": "mp3",
           "contentType": "audio/mpeg",
           "path": "Synthetic/Synthetic_-_Colorsmoke_EP/05-Synthetic_-_RedGreenSmoke.mp3",
-          "distance": 0.45
+          "similarity": 0.45
         }
       ]
     }
