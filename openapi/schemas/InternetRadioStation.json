@@ -20,7 +20,11 @@
         },
         "homePageUrl": {
             "type": "string",
-            "description": "Genre name"
+            "description": "The home page URL for the station."
+        },
+        "coverArt": {
+            "type": "string",
+            "description": "The cover art id."
         }
     },
     "required": [

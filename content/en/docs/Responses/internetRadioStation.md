@@ -12,7 +12,8 @@ description: >
   "id": "2",
   "name": "HBR1.com - I.D.M. Tranceponder",
   "streamUrl": "http://ubuntu.hbr1.com:19800/trance.ogg",
-  "homepageUrl": "http://www.hbr1.com/"
+  "homePageUrl": "http://www.hbr1.com/",
+  "coverArt": "ir-2"
 }
 {{< /tab >}}
 {{< tab header="Subsonic" lang="json" >}}
@@ -20,7 +21,7 @@ description: >
   "id": "2",
   "name": "HBR1.com - I.D.M. Tranceponder",
   "streamUrl": "http://ubuntu.hbr1.com:19800/trance.ogg",
-  "homepageUrl": "http://www.hbr1.com/"
+  "homePageUrl": "http://www.hbr1.com/"
 }
 {{< /tab >}}
 {{< /tabpane >}}
@@ -30,4 +31,5 @@ description: >
 | `id` | `string` | **Yes** |     | The Id |
 | `name` | `string` | **Yes** |     | The name |
 | `streamUrl` | `string` | **Yes**|     | The radio url |
-| `homePageUrl` | `string` | No |     | Genre name |
+| `homePageUrl` | `string` | No |     | The home page URL for the station. |
+| `coverArt` | `string` | No | **Yes** | The cover art id. |
