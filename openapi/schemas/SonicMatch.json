@@ -1,22 +1,19 @@
 {
-    "description": "A Child element with an additional normalized similarity field.",
-    "allOf": [
-        {
+    "description": "A sonic match entry, containing a Child entry object and a normalized similarity score.",
+    "type": "object",
+    "properties": {
+        "entry": {
             "$ref": "./Child.json"
         },
-        {
-            "type": "object",
-            "properties": {
-                "similarity": {
-                    "type": "number",
-                    "description": "The normalized similarity score (1.0 = most similar, 0.0 = least similar). For getSonicSimilarTracks, relative to the query song. For findSonicPath, relative to the starting song. Returns -1 when similarity is not supported by the server.",
-                    "minimum": -1,
-                    "maximum": 1
-                }
-            },
-            "required": [
-                "similarity"
-            ]
+        "similarity": {
+            "type": "number",
+            "description": "The normalized similarity score (1.0 = most similar, 0.0 = least similar). For getSonicSimilarTracks, relative to the query song. For findSonicPath, relative to the starting song. Returns -1 when similarity is not supported by the server.",
+            "minimum": -1,
+            "maximum": 1
         }
+    },
+    "required": [
+        "entry",
+        "similarity"
     ]
 }
