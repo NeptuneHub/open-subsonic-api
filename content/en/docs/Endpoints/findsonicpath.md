@@ -27,7 +27,7 @@ Finds a path of songs connecting a start song to an end song, navigating through
 
 ### Result
 
-A [`subsonic-response`](../../responses/subsonic-response) element with a top-level `sonicMatch` array on success.
+A [`subsonic-response`](../../responses/subsonic-response) element with a top-level `sonicMatch` array on success. The returned path MUST contain the start song as the first entry and the end song as the last entry.
 
 {{< tabpane persist=false >}}
 {{< tab header="**Example**:" disabled=true />}}
@@ -110,4 +110,4 @@ Does not exist.
 
 | Field |  Type | Req. | OpenS. | Details |
 | --- | --- | --- | --- | --- |
-| `sonicMatch` | Array of [`sonicMatch`](../../responses/sonicmatch) | **Yes** |  | The ordered sonic path results with per-track similarity |
+| `sonicMatch` | Array of [`sonicMatch`](../../responses/sonicmatch) | **Yes** |  | The ordered sonic path results with per-track similarity. The path begins with `startSongId` and ends with `endSongId`. |
