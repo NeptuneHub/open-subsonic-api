@@ -53,4 +53,4 @@ Does not exist.
 | Field |  Type | Req. | OpenS. | Details |
 | --- | --- | --- | --- | --- |
 | `entry` | [`Child`](../child) | **Yes** |  | The child metadata object (id, parent, title, etc.). |
-| `similarity` | `number` | **Yes** |  | The normalized similarity score (1.0 = most similar, 0.0 = least similar). For `getSonicSimilarTracks`, relative to the query song. For `findSonicPath`, relative to the starting song. Returns -1 when similarity is not supported by the server. |
+| `similarity` | `number` | **Yes** |  | The normalized similarity score (1.0 = same exact song, 0.0 = most different). For `getSonicSimilarTracks`, relative to the query song. For `findSonicPath`, relative to the starting song. Returns -1 when similarity is not supported by the server. |
