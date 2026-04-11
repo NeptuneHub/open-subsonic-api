@@ -11,7 +11,7 @@ description: >
 
 `http://your-server/rest/getSonicSimilarTracks`
 
-Returns tracks that are sonically similar to a given track, based on audio analysis. Each result includes its normalized distance from the query track.
+Returns tracks that are sonically similar to a given track, based on audio analysis. Each result includes a normalized similarity score to the query track. Lower values indicate closer similarity, with `0` meaning it is the exact same song.
 
 ### Parameters
 
