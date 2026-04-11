@@ -11,7 +11,7 @@ description: >
 
 `http://your-server/rest/getSonicSimilarTracks`
 
-Returns tracks that are sonically similar to a given track, based on audio analysis. Each result includes a normalized similarity score to the query track. Higher values indicate greater similarity, with `1.0` meaning it is the exact same song and `0.0` meaning the most different.
+Returns tracks that are sonically similar to a given track, based on audio analysis. Results are ordered from most similar to least similar. Each result includes a normalized similarity score to the query track. Higher values indicate greater similarity, with `1.0` meaning it is the exact same song and `0.0` meaning the most different.
 
 ### Parameters
 
@@ -66,7 +66,7 @@ A [`subsonic-response`](../../responses/subsonic-response) element with a top-le
             "contentType": "audio/x-ms-wma",
             "path": "Synthetic/Synthetic_-_Colorsmoke_EP/04-Synthetic_-_BrownSmoke.wma"
           },
-          "similarity": 0.05
+          "similarity": 0.95
         },
         {
           "entry": {
@@ -95,7 +95,7 @@ A [`subsonic-response`](../../responses/subsonic-response) element with a top-le
             "contentType": "audio/mpeg",
             "path": "Synthetic/Synthetic_-_Colorsmoke_EP/05-Synthetic_-_RedGreenSmoke.mp3"
           },
-          "similarity": 0.12
+          "similarity": 0.88
         }
       ]
     }

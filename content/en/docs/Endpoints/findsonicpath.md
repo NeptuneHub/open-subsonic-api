@@ -67,7 +67,7 @@ A [`subsonic-response`](../../responses/subsonic-response) element with a top-le
             "contentType": "audio/x-ms-wma",
             "path": "Synthetic/Synthetic_-_Colorsmoke_EP/04-Synthetic_-_BrownSmoke.wma"
           },
-          "similarity": 0.0
+          "similarity": 1.0
         },
         {
           "entry": {
