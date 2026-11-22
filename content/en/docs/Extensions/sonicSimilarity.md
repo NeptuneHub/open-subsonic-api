@@ -15,8 +15,8 @@ description: >
 
 This extension adds two new audio-similarity endpoints:
 
-- [`findSonicPath`](../../endpoints/findSonicPath)
-- [`getSonicSimilarTracks`](../../endpoints/getSonicSimilarTracks)
+- [`findSonicPath`](../../endpoints/findsonicpath)
+- [`getSonicSimilarTracks`](../../endpoints/getsonicsimilartracks)
 
 These endpoints return a list of [`sonicMatch`](../../responses/sonicmatch) entries, each with a `Child` entry and a normalized similarity score.
 
