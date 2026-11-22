@@ -1,0 +1,51 @@
+{
+    "type": "object",
+    "description": "A song in Smart Fade playback order, wrapping a standard Child. Both cue fields are present when analysis is available and omitted otherwise. Cues are fractional-second song positions, not fade durations; 0 <= fadeIn < fadeOut <= song length.",
+    "properties": {
+        "entry": {
+            "$ref": "./Child.json"
+        },
+        "fadeIn": {
+            "type": "number",
+            "description": "Suggested entry position in seconds from the song beginning. Zero for the first analyzed song.",
+            "minimum": 0
+        },
+        "fadeOut": {
+            "type": "number",
+            "description": "Suggested end of the handover in seconds from the song beginning. The exact song length for the last analyzed song.",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        }
+    },
+    "required": [
+        "entry"
+    ],
+    "oneOf": [
+        {
+            "required": [
+                "fadeIn",
+                "fadeOut"
+            ]
+        },
+        {
+            "not": {
+                "anyOf": [
+                    {
+                        "required": [
+                            "fadeIn"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "fadeOut"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "externalDocs": {
+        "description": "sonicSmartFadeEntry",
+        "url": "https://opensubsonic.github.io/docs/responses/sonicsmartfadeentry/"
+    }
+}

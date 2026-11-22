@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "description": "Normalization and sampled playback controls for one song. All curves in both songs have a common sample count N >= 2. Sample i occurs at i * duration / (N - 1) elapsed seconds. Interpolate linearly in the supplied units. Apply all controls together; volume may exceed 1 and EQ may be positive.",
+    "properties": {
+        "gain": {
+            "type": "number",
+            "description": "Linear normalization gain relative to decoded PCM, applied for the entire song. Replaces client ReplayGain or automatic normalization. Consistent for the song across adjacent plans in a playback session.",
+            "minimum": 0
+        },
+        "speed": {
+            "type": "array",
+            "description": "Playback-rate multipliers; 1 is normal. Pitch follows speed without pitch-preserving time stretch.",
+            "minItems": 2,
+            "items": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMinimum": true
+            }
+        },
+        "volume": {
+            "type": "array",
+            "description": "Linear fader multipliers on top of gain, including level compensation and peak control. Do not clamp to 1.",
+            "minItems": 2,
+            "items": {
+                "type": "number",
+                "minimum": 0
+            }
+        },
+        "highDb": {
+            "type": "array",
+            "description": "High-shelf gain in dB. Zero is flat; negative attenuates and positive boosts.",
+            "minItems": 2,
+            "items": {
+                "type": "number"
+            }
+        },
+        "midDb": {
+            "type": "array",
+            "description": "Peaking filter gain in dB.",
+            "minItems": 2,
+            "items": {
+                "type": "number"
+            }
+        },
+        "bassDb": {
+            "type": "array",
+            "description": "Low-shelf gain in dB. Ignored for the incoming song when highpassHz is present.",
+            "minItems": 2,
+            "items": {
+                "type": "number"
+            }
+        }
+    },
+    "required": [
+        "gain",
+        "speed",
+        "volume",
+        "highDb",
+        "midDb",
+        "bassDb"
+    ],
+    "externalDocs": {
+        "description": "sonicSmartFadeTrack",
+        "url": "https://opensubsonic.github.io/docs/responses/sonicsmartfadetrack/"
+    }
+}

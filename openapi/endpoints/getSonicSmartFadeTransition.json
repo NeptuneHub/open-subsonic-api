@@ -1,0 +1,133 @@
+{
+    "get": {
+        "summary": "Returns the timing and playback curves for a Smart Fade between two songs.",
+        "description": "Requires sonicSimilarity extension version 2. Plans a transition from the currently playing song to the next, including playback rate, loudness normalization, volume and EQ automation. Cue inputs are song-relative seconds and may be adjusted; use the returned positions. Request early enough to load the audio and schedule the returned start. Without compatible beats, return a crossfade when possible. Standard failed subsonic-response codes: 10 for missing parameters, 70 for unknown or inaccessible songs, 0 for invalid cue positions or other planning failures. If the plan fails, arrives late, or cannot be executed, use a client crossfade at the queue cues.",
+        "operationId": "getSonicSmartFadeTransition",
+        "tags": [
+            "Browsing",
+            "Addition"
+        ],
+        "parameters": [
+            {
+                "name": "fromSongId",
+                "in": "query",
+                "description": "The ID of the currently playing song (from).",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "toSongId",
+                "in": "query",
+                "description": "The ID of the next song (to).",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "fadeOut",
+                "in": "query",
+                "description": "Suggested outgoing end position in seconds from getSonicSmartFade. Positive and no later than the song end.",
+                "required": true,
+                "schema": {
+                    "type": "number",
+                    "minimum": 0,
+                    "exclusiveMinimum": true
+                }
+            },
+            {
+                "name": "fadeIn",
+                "in": "query",
+                "description": "Suggested incoming entry position in seconds from getSonicSmartFade. Nonnegative and before the song end.",
+                "required": true,
+                "schema": {
+                    "type": "number",
+                    "minimum": 0
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful or failed response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "./getSonicSmartFadeTransition/GetSonicSmartFadeTransitionResponse.json"
+                        }
+                    }
+                }
+            }
+        },
+        "externalDocs": {
+            "description": "getSonicSmartFadeTransition",
+            "url": "https://opensubsonic.github.io/docs/endpoints/getsonicsmartfadetransition/"
+        }
+    },
+    "post": {
+        "summary": "Returns the timing and playback curves for a Smart Fade between two songs.",
+        "description": "Requires sonicSimilarity extension version 2. Plans a transition from the currently playing song to the next, including playback rate, loudness normalization, volume and EQ automation. Cue inputs are song-relative seconds and may be adjusted; use the returned positions. Request early enough to load the audio and schedule the returned start. Without compatible beats, return a crossfade when possible. Standard failed subsonic-response codes: 10 for missing parameters, 70 for unknown or inaccessible songs, 0 for invalid cue positions or other planning failures. If the plan fails, arrives late, or cannot be executed, use a client crossfade at the queue cues.\n\nRequires OpenSubsonic extension name `formPost` (As returned by `getOpenSubsonicExtensions`).",
+        "operationId": "postGetSonicSmartFadeTransition",
+        "tags": [
+            "Browsing"
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/x-www-form-urlencoded": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "fromSongId": {
+                                "type": "string",
+                                "description": "The ID of the currently playing song (from)."
+                            },
+                            "toSongId": {
+                                "type": "string",
+                                "description": "The ID of the next song (to)."
+                            },
+                            "fadeOut": {
+                                "type": "number",
+                                "minimum": 0,
+                                "exclusiveMinimum": true,
+                                "description": "Suggested outgoing end position in seconds from getSonicSmartFade. Positive and no later than the song end."
+                            },
+                            "fadeIn": {
+                                "type": "number",
+                                "minimum": 0,
+                                "description": "Suggested incoming entry position in seconds from getSonicSmartFade. Nonnegative and before the song end."
+                            }
+                        },
+                        "required": [
+                            "fromSongId",
+                            "toSongId",
+                            "fadeOut",
+                            "fadeIn"
+                        ]
+                    }
+                }
+            }
+        },
+        "parameters": [],
+        "responses": {
+            "200": {
+                "description": "Successful or failed response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "./getSonicSmartFadeTransition/GetSonicSmartFadeTransitionResponse.json"
+                        }
+                    }
+                }
+            },
+            "405": {
+                "$ref": "../responses/HTTPFormPostNotSupported.json"
+            }
+        },
+        "externalDocs": {
+            "description": "getSonicSmartFadeTransition",
+            "url": "https://opensubsonic.github.io/docs/endpoints/getsonicsmartfadetransition/"
+        }
+    }
+}

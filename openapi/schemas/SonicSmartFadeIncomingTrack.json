@@ -1,0 +1,41 @@
+{
+    "description": "Controls for the incoming song, with entry and continuation positions and an optional high-pass sweep.",
+    "allOf": [
+        {
+            "$ref": "./SonicSmartFadeTrack.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "start": {
+                    "type": "number",
+                    "description": "Position in the incoming song in seconds where it starts at the transition beginning.",
+                    "minimum": 0
+                },
+                "continueFrom": {
+                    "type": "number",
+                    "description": "Position in the incoming song in seconds where normal playback continues after the overlap. Consistent with the integral of its speed curve, allowing for numeric rounding.",
+                    "minimum": 0
+                },
+                "highpassHz": {
+                    "type": "array",
+                    "description": "Optional high-pass corner frequencies in Hz, replacing the incoming low shelf. Same sample count as every other curve. Omit when unused; do not return null.",
+                    "minItems": 2,
+                    "items": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                    }
+                }
+            },
+            "required": [
+                "start",
+                "continueFrom"
+            ]
+        }
+    ],
+    "externalDocs": {
+        "description": "sonicSmartFadeIncomingTrack",
+        "url": "https://opensubsonic.github.io/docs/responses/sonicsmartfadeincomingtrack/"
+    }
+}

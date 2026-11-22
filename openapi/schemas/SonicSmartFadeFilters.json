@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "description": "Shared second-order biquad EQ configuration. Shelves use slope S = 1; the peaking filter uses midQ. An incoming high-pass replaces its low shelf and uses Q = 10^(1/20), equivalent to Web Audio high-pass Q = 1 dB.",
+    "properties": {
+        "highHz": {
+            "type": "number",
+            "description": "High-shelf corner frequency in Hz.",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        },
+        "midHz": {
+            "type": "number",
+            "description": "Peaking filter centre frequency in Hz.",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        },
+        "midQ": {
+            "type": "number",
+            "description": "Peaking filter quality factor Q, dimensionless.",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        },
+        "bassHz": {
+            "type": "number",
+            "description": "Low-shelf corner frequency in Hz.",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        }
+    },
+    "required": [
+        "highHz",
+        "midHz",
+        "midQ",
+        "bassHz"
+    ],
+    "externalDocs": {
+        "description": "sonicSmartFadeFilters",
+        "url": "https://opensubsonic.github.io/docs/responses/sonicsmartfadefilters/"
+    }
+}

@@ -1,6 +1,6 @@
 {
     "type": "object",
-    "description": "A supported OpenSubsonic API extension.",
+    "description": "One supported OpenSubsonic API extension, identified by its name and supported extension versions.",
     "externalDocs": {
         "description": "OpenSubsonicExtension",
         "url": "https://opensubsonic.github.io/docs/responses/opensubsonicextension/"
@@ -8,11 +8,11 @@
     "properties": {
         "name": {
             "type": "string",
-            "description": "The name of the extension."
+            "description": "The extension name, such as sonicSimilarity, rather than an individual API endpoint name."
         },
         "versions": {
             "type": "array",
-            "description": "The list of supported versions of the this extension.",
+            "description": "The supported versions of this extension specification, rather than the Subsonic API version.",
             "items": {
                 "type": "integer"
             }
@@ -21,5 +21,12 @@
     "required": [
         "name",
         "versions"
-    ]
+    ],
+    "example": {
+        "name": "sonicSimilarity",
+        "versions": [
+            1,
+            2
+        ]
+    }
 }

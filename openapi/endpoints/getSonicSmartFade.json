@@ -1,0 +1,101 @@
+{
+    "get": {
+        "summary": "Orders a queue for Smart Fade playback and suggests per-song cue positions.",
+        "description": "Requires sonicSimilarity extension version 2. Returns every requested song occurrence exactly once, including repeated IDs, with standard Child metadata. The first song with analysis stays first; songs without analysis go last in their relative input order. Missing analysis omits both cue fields without dropping the song. Unknown or inaccessible song IDs fail the request. Cue positions are suggestions; request getSonicSmartFadeTransition for detailed playback controls.",
+        "operationId": "getSonicSmartFade",
+        "tags": [
+            "Browsing",
+            "Addition"
+        ],
+        "parameters": [
+            {
+                "name": "id",
+                "in": "query",
+                "description": "Song IDs in queue order. Repeat id for each occurrence; at least one is required.",
+                "required": true,
+                "style": "form",
+                "explode": true,
+                "schema": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful or failed response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "./getSonicSmartFade/GetSonicSmartFadeResponse.json"
+                        }
+                    }
+                }
+            }
+        },
+        "externalDocs": {
+            "description": "getSonicSmartFade",
+            "url": "https://opensubsonic.github.io/docs/endpoints/getsonicsmartfade/"
+        }
+    },
+    "post": {
+        "summary": "Orders a queue for Smart Fade playback and suggests per-song cue positions.",
+        "description": "Requires sonicSimilarity extension version 2. Returns every requested song occurrence exactly once, including repeated IDs, with standard Child metadata. The first song with analysis stays first; songs without analysis go last in their relative input order. Missing analysis omits both cue fields without dropping the song. Unknown or inaccessible song IDs fail the request. Cue positions are suggestions; request getSonicSmartFadeTransition for detailed playback controls.\n\nRequires OpenSubsonic extension name `formPost` (As returned by `getOpenSubsonicExtensions`).",
+        "operationId": "postGetSonicSmartFade",
+        "tags": [
+            "Browsing"
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/x-www-form-urlencoded": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "Song IDs in queue order. Repeat id for each occurrence; at least one is required."
+                            }
+                        },
+                        "required": [
+                            "id"
+                        ]
+                    },
+                    "encoding": {
+                        "id": {
+                            "style": "form",
+                            "explode": true
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": [],
+        "responses": {
+            "200": {
+                "description": "Successful or failed response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "./getSonicSmartFade/GetSonicSmartFadeResponse.json"
+                        }
+                    }
+                }
+            },
+            "405": {
+                "$ref": "../responses/HTTPFormPostNotSupported.json"
+            }
+        },
+        "externalDocs": {
+            "description": "getSonicSmartFade",
+            "url": "https://opensubsonic.github.io/docs/endpoints/getsonicsmartfade/"
+        }
+    }
+}

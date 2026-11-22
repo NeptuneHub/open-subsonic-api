@@ -10,7 +10,17 @@
                     "type": "array",
                     "items": {
                         "$ref": "../../schemas/OpenSubsonicExtension.json"
-                    }
+                    },
+                    "example": [
+                        {
+                            "name": "sonicSimilarity",
+                            "versions": [
+                                1,
+                                2
+                            ]
+                        }
+                    ],
+                    "description": "The extensions supported by the server, each with its name and supported extension versions. Entries identify extensions, not individual API endpoints."
                 }
             },
             "required": [

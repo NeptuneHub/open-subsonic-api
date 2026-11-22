@@ -1,16 +1,14 @@
 {
     "get": {
         "summary": "List the OpenSubsonic extensions supported by this server.",
-        "description": "List the OpenSubsonic extensions supported by this server.",
+        "description": "Lists the OpenSubsonic extensions supported by this server. Each entry identifies an extension and its supported extension versions, rather than an individual API endpoint.",
         "operationId": "getOpenSubsonicExtensions",
         "tags": [
             "System",
             "Addition"
         ],
         "security": [],
-        "parameters": [
-
-        ],
+        "parameters": [],
         "responses": {
             "200": {
                 "description": "Successful or failed response",
@@ -30,7 +28,7 @@
     },
     "post": {
         "summary": "List the OpenSubsonic extensions supported by this server.",
-        "description": "List the OpenSubsonic extensions supported by this server.\n\nRequires OpenSubsonic extension name `formPost` (As returned by `getOpenSubsonicExtensions`)",
+        "description": "Lists the OpenSubsonic extensions supported by this server. Each entry identifies an extension and its supported extension versions, rather than an individual API endpoint.\n\nRequires OpenSubsonic extension name `formPost` (As returned by `getOpenSubsonicExtensions`)",
         "operationId": "postGetOpenSubsonicExtensions",
         "tags": [
             "System",
@@ -47,9 +45,7 @@
                 }
             }
         },
-        "parameters": [
-
-        ],
+        "parameters": [],
         "responses": {
             "200": {
                 "description": "Successful or failed response",

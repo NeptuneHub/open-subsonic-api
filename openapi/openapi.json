@@ -273,6 +273,12 @@
         "/rest/getSonicSimilarTracks": {
             "$ref": "./endpoints/getSonicSimilarTracks.json"
         },
+        "/rest/getSonicSmartFade": {
+            "$ref": "./endpoints/getSonicSmartFade.json"
+        },
+        "/rest/getSonicSmartFadeTransition": {
+            "$ref": "./endpoints/getSonicSmartFadeTransition.json"
+        },
         "/rest/getSong": {
             "$ref": "./endpoints/getSong.json"
         },
@@ -1012,6 +1018,33 @@
             },
             "GetSonicSimilarTracksResponse": {
                 "$ref": "./endpoints/getSonicSimilarTracks/GetSonicSimilarTracksResponse.json"
+            },
+            "GetSonicSmartFadeSuccessResponse": {
+                "$ref": "./endpoints/getSonicSmartFade/GetSonicSmartFadeSuccessResponse.json"
+            },
+            "GetSonicSmartFadeResponse": {
+                "$ref": "./endpoints/getSonicSmartFade/GetSonicSmartFadeResponse.json"
+            },
+            "GetSonicSmartFadeTransitionSuccessResponse": {
+                "$ref": "./endpoints/getSonicSmartFadeTransition/GetSonicSmartFadeTransitionSuccessResponse.json"
+            },
+            "GetSonicSmartFadeTransitionResponse": {
+                "$ref": "./endpoints/getSonicSmartFadeTransition/GetSonicSmartFadeTransitionResponse.json"
+            },
+            "SonicSmartFadeEntry": {
+                "$ref": "./schemas/SonicSmartFadeEntry.json"
+            },
+            "SonicSmartFadeFilters": {
+                "$ref": "./schemas/SonicSmartFadeFilters.json"
+            },
+            "SonicSmartFadeTrack": {
+                "$ref": "./schemas/SonicSmartFadeTrack.json"
+            },
+            "SonicSmartFadeIncomingTrack": {
+                "$ref": "./schemas/SonicSmartFadeIncomingTrack.json"
+            },
+            "SonicSmartFadeTransition": {
+                "$ref": "./schemas/SonicSmartFadeTransition.json"
             }
         }
     }

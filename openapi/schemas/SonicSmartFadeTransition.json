@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "description": "A complete Smart Fade playback plan for the requested fromSongId and toSongId. At start seconds in the outgoing song, start the incoming song from to.start and execute all curves over duration elapsed seconds on one clock. All curves share N >= 2 samples, with linear interpolation and spacing duration / (N - 1). Stop the outgoing song at the end, then continue the incoming song from to.continueFrom at speed 1, volume 1, flat filters, and its existing gain. The plan fits both audio sources, accounting for playback-rate changes.",
+    "properties": {
+        "start": {
+            "type": "number",
+            "description": "Outgoing song position in seconds where the transition begins. May differ from the supplied cue.",
+            "minimum": 0
+        },
+        "duration": {
+            "type": "number",
+            "description": "Elapsed playback seconds during which both songs overlap, independent of their playback rates.",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        },
+        "filters": {
+            "$ref": "./SonicSmartFadeFilters.json"
+        },
+        "from": {
+            "$ref": "./SonicSmartFadeTrack.json"
+        },
+        "to": {
+            "$ref": "./SonicSmartFadeIncomingTrack.json"
+        }
+    },
+    "required": [
+        "start",
+        "duration",
+        "filters",
+        "from",
+        "to"
+    ],
+    "externalDocs": {
+        "description": "Smart Fade playback controls",
+        "url": "https://opensubsonic.github.io/docs/responses/sonicsmartfadetransition/"
+    }
+}

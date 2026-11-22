@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "description": "A subsonic-response element with sonicSmartFade on success.",
+    "properties": {
+        "subsonic-response": {
+            "oneOf": [
+                {
+                    "$ref": "./GetSonicSmartFadeSuccessResponse.json"
+                },
+                {
+                    "$ref": "../../schemas/SubsonicResponse/SubsonicFailureResponse.json"
+                }
+            ]
+        }
+    },
+    "required": [
+        "subsonic-response"
+    ],
+    "externalDocs": {
+        "description": "getSonicSmartFade",
+        "url": "https://opensubsonic.github.io/docs/endpoints/getsonicsmartfade/"
+    }
+}

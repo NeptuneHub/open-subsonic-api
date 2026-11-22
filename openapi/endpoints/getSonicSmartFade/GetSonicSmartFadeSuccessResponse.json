@@ -1,0 +1,23 @@
+{
+    "allOf": [
+        {
+            "$ref": "../../schemas/SubsonicResponse/SubsonicSuccessResponse.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "sonicSmartFade": {
+                    "type": "array",
+                    "minItems": 1,
+                    "description": "Songs in playback order with standard Child metadata and optional cue positions.",
+                    "items": {
+                        "$ref": "../../schemas/SonicSmartFadeEntry.json"
+                    }
+                }
+            },
+            "required": [
+                "sonicSmartFade"
+            ]
+        }
+    ]
+}
